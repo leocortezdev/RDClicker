@@ -25,7 +25,8 @@ h1 {
     display: flex;
     align-items: center;
     flex-direction: column;
-
+    justify-content: center;
+    margin-top: 15px;
     
 }
 
@@ -54,9 +55,12 @@ h1 {
 
 .upgradeAreaOff {
     display: none;
+    
 }
 
-.upgradeAreaOn {
+.row {
+    display: flex;
     justify-content: center;
-
+    align-items: center;
 }
+

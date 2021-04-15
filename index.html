@@ -4,42 +4,63 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Realms Of Dungeons Clicker</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./assets/styles.css" type="text/css">
-        <script rel="text/javascript" src="./assets/main.js" defer></script>
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <!--[if lt IE 7]>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Realms Of Dungeons Clicker</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./assets/styles.css" type="text/css">
+    <script rel="text/javascript" src="./assets/main.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body onload="load();">
+    <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <h1>Andalucian Gems</h1>
+    <h1>Bandalucian Gems</h1>
+    
+        <div class="container">
+            <h2 id="current-goal">GOAL: Reach 25 Gems!</h2>
+            <button onclick="deleteSave();window.location.reload();">reset</button>
+        </div>
         <div class="container">
             <h2>Gem Count :</h2>
-            <span class ="gem-count" id="gem-count">0</span>
-            <img type="image" id="btn-gem" class="btn" src="./assets/images/gem-image.png" onclick="gemClick(1);">
-            
-            
+
+            <span class="gem-count" id="gem-count">0</span>
+            <img type="image" id="btn-gem" class="btn" src="./assets/images/gem-image.png" onclick="gemClick();">
+
+
         </div>
-        <div class="upgradeAreaOn container" id="upgradeArea">
-            <h2>Upgrades</h2>
-            
-            <span class="echestUpgrade-level" id="echest-level">Enderchest Level: 0</span>
-            <span class="cost" id="echest-cost">Cost: 25</span>
-            <img id="btn-echestUpgrade" class ="btn echestUpgrade" src="./assets/images/echest-image.png" onclick="buyEChestUpgrade(1);">
-            <span><strong>Increases gems per second by 1</strong></span>
-            <br/>
-            <span class="chestUpgrade-level">Chest Level: 0</span>
-            <span class="cost">Cost: 25</span>
-            <img id="btn-echestUpgrade" class ="btn echestUpgrade" src="./assets/images/chest-image.png" onclick="buyChestUpgrade(1);">
+        <div class="row">
+        <div class="upgradeAreaOff container" id="upgradeArea">
+            <div class="container">
+                <h2>Upgrades</h2>
+
+            </div>
+            <div class="container">
+                <span class="echestUpgrade-level" id="echest-level">Enderchest Level: 0</span>
+                <span class="cost" id="echest-cost">Cost: 25</span>
+
+                <img id="btn-echestUpgrade" class="btn echestUpgrade" src="./assets/images/echest-image.png"
+                    onclick="buyEChestUpgrade(1);">
+                <span><strong>Increases gems per second by 1</strong></span>
+            </div>
+            <div class="container">
+                <br />
+                <span class="chestUpgrade-level" id="chest-level">Chest Level: 0</span>
+                <span class="cost" id="chest-cost">Cost: 25</span>
+                <img id="btn-echestUpgrade" class="btn echestUpgrade" src="./assets/images/chest-image.png"
+                    onclick="buyChestUpgrade(1);">
+                <span><strong>Increases gem click by 1</strong></span>
+            </div>
         </div>
-        
-    </body>
+        </div>
+   
+</body>
+
 </html>
