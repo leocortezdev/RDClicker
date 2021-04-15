@@ -1,5 +1,6 @@
 
 let gameData = {
+    version: 0.000001,
     gems: 0,
     gemsPerClick: 1,
     numOfEchestUp: 0,
@@ -72,7 +73,7 @@ function valueCheck() {
     } else {
         document.getElementById('upgradeArea').className = 'upgradeAreaOn';
         gameData.valueCheck = true;
-        document.getElementById('current-goal').innerHTML = 'CURRENT GOAL: REACH 10000 GEMS';
+        document.getElementById('current-goal').innerHTML = 'CURRENT GOAL: REACH 25000 GEMS';
     }
 
 }
@@ -88,17 +89,21 @@ function deleteSave() {
 
 function load() {
     let savegame = JSON.parse(localStorage.getItem("gameData"));
-    if (savegame !== null) {
-        gameData = savegame;
-    }
+    if (savegame !== null) {gameData = savegame;}
     if (typeof savegame.gems !== "undefined") {gameData.gems = savegame.gems};
     if (typeof savegame.numOfEchestUp !== "undefined") {gameData.numOfEchestUp = savegame.numOfEchestUp};
     if (typeof savegame.numOfChestUp !== "undefined") {gameData.numOfChestUp = savegame.numOfChestUp};
+    
+}
+function reload() {
+    if (typeof gameData.numOfEchest === true) {document.getElementById('chest-level').innerHTML = `Chest Level: ${gameData.numOfChestUp}`;}
+    if (typeof gameData.numOfChestUp === true) {document.getElementById('echest-level').innerHTML = `EnderChest Level: ${gameData.numOfEchestUp}`;}
 }
 window.setInterval(function() {
     autoGemClick();
     valueCheck();
     AutoSave();
+    reload();
     console.log(gameData.gemsPerClick);
     console.log(gameData.numOfChestUp);
     console.log(gameData.numOfEchestUp);
